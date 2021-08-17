@@ -6,8 +6,8 @@
 FROM        python:3.9-slim
 
 LABEL       author="Tweak4141" maintainer="tweak@daftscientist.com"
-RUN         echo "deb http://httpredir.debian.org/debian jessie main contrib" > /etc/apt/sources.list \
-            && echo "deb http://security.debian.org/ jessie/updates main contrib" >> /etc/apt/sources.list \
+RUN         echo "deb [trusted=yes] http://httpredir.debian.org/debian jessie main contrib" > /etc/apt/sources.list \
+            && echo "deb [trusted=yes] http://security.debian.org/ jessie/updates main contrib" >> /etc/apt/sources.list \
             && echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
             && apt update \
             && apt install -y ttf-mscorefonts-installer \
