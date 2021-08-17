@@ -14,7 +14,7 @@ RUN         echo "deb http://httpredir.debian.org/debian jessie main contrib" > 
             && apt clean \
             && apt autoremove -y \
             && rm -rf /var/lib/apt/lists/* \
-            && apt -y install git gcc g++ ca-certificates fonts-symbola ghostscript fonts-dejavu-core dnsutils ttf-mscorefonts-installer curl iproute2 ffmpeg procps apt-utils imagemagick libmagickwand-dev python3-pythonmagick --no-install-recommends \
+            && apt -y install git gcc g++ ca-certificates fonts-symbola ghostscript fonts-dejavu-core dnsutils curl iproute2 ffmpeg procps apt-utils imagemagick libmagickwand-dev python3-pythonmagick --no-install-recommends \
             && sed -i '/<policy domain="path" rights="none" pattern="@\*"/d' /etc/ImageMagick-6/policy.xml \
             && useradd -m -d /home/container container
 
